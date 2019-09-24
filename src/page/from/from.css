@@ -1,0 +1,31 @@
+.From {
+}
+.From .From-content {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.From .From-content .From-item {
+  display: table;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.From .From-content .input-labal {
+  /* display: inline-block; */
+  width: 80px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.From .From-content .input-wrapper {
+  margin-right: 50px;
+  display: table-cell;
+}
+.test {
+  height: 30px;
+  background: red;
+  margin-top: 20px;
+}
+.red {
+  color: red;
+}
