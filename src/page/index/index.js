@@ -34,6 +34,16 @@ class Index extends Component {
             >
               去from表单
             </Button>
+            <div className="button-container">
+              <Button
+                type="primary"
+                onClick={e => {
+                  this.buttonClick('/cartSample/three')
+                }}
+              >
+                去购物车
+              </Button>
+            </div>
           </div>
         </header>
       </div>

@@ -8,6 +8,7 @@ import './App.css'
 import Home from './page/home/home'
 import From from './page/from/from'
 import Index from './page/index/index'
+import CartSample from './page/cartSample/index'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route exact path="/" component={Index}></Route>
         <Route path="/home" component={Home}></Route>
         <Route path="/from" component={From}></Route>
+        <Route path="/cartSample/:id" component={CartSample}></Route>
       </Router>
     </div>
   )
