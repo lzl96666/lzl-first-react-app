@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Button, Icon } from 'antd'
-import Text from 'antd/lib/typography/Text'
+// import Text from 'antd/lib/typography/Text'
 export default class cartSapmle extends Component {
   constructor(props) {
     super(props)
@@ -34,7 +34,7 @@ export default class cartSapmle extends Component {
     })
   }
   addGood() {
-    if (this.state.goodName == '') {
+    if (this.state.goodName === '') {
       alert('请填写商品')
       return
     }

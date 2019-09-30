@@ -44,6 +44,26 @@ class Index extends Component {
                 去购物车
               </Button>
             </div>
+            <div className="button-container">
+              <Button
+                type="primary"
+                onClick={e => {
+                  this.buttonClick('/comp')
+                }}
+              >
+                组件化
+              </Button>
+            </div>
+            <div className="button-container">
+              <Button
+                type="primary"
+                onClick={e => {
+                  this.buttonClick('/hoc')
+                }}
+              >
+                hoc
+              </Button>
+            </div>
           </div>
         </header>
       </div>
