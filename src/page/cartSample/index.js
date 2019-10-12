@@ -190,7 +190,14 @@ export default class cartSapmle extends Component {
             ))}
           </ul>
         </div>
+        {/* test */}
+        <Test1>ad</Test1>
       </div>
     )
   }
+}
+
+function Test1(props) {
+  console.log(props)
+  return <div>{props.children}</div>
 }

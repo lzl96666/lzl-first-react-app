@@ -3,6 +3,40 @@ import './index.css'
 
 import logo from './logo.svg'
 import { Button } from 'antd'
+const buttons = [
+  {
+    path: '/home',
+    name: 'home'
+  },
+  {
+    path: '/from',
+    name: '去from表单'
+  },
+  {
+    path: '/cartSample/three',
+    name: '去购物车'
+  },
+  {
+    path: '/comp',
+    name: '组件化'
+  },
+  {
+    path: '/hoc',
+    name: 'hoc'
+  },
+  {
+    path: '/hook',
+    name: 'hook'
+  },
+  {
+    path: '/context',
+    name: 'context'
+  },
+  {
+    path: '/redux',
+    name: 'redux'
+  }
+]
 class Index extends Component {
   buttonClick(router) {
     this.props.history.push(router)
@@ -13,58 +47,19 @@ class Index extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>MY FIRST REACT APP</p>
-          <div className="button-container">
-            {' '}
-            <Button
-              type="primary"
-              onClick={e => {
-                this.buttonClick('/home')
-              }}
-            >
-              去home
-            </Button>
-          </div>
-          <div className="button-container">
-            {' '}
-            <Button
-              type="primary"
-              onClick={e => {
-                this.buttonClick('/from')
-              }}
-            >
-              去from表单
-            </Button>
-            <div className="button-container">
+          {buttons.map((item, index) => (
+            <div key={index} className="button-container">
+              {' '}
               <Button
                 type="primary"
                 onClick={e => {
-                  this.buttonClick('/cartSample/three')
+                  this.buttonClick(item.path)
                 }}
               >
-                去购物车
+                {item.name}
               </Button>
             </div>
-            <div className="button-container">
-              <Button
-                type="primary"
-                onClick={e => {
-                  this.buttonClick('/comp')
-                }}
-              >
-                组件化
-              </Button>
-            </div>
-            <div className="button-container">
-              <Button
-                type="primary"
-                onClick={e => {
-                  this.buttonClick('/hoc')
-                }}
-              >
-                hoc
-              </Button>
-            </div>
-          </div>
+          ))}
         </header>
       </div>
     )

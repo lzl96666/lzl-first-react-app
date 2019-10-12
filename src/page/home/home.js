@@ -8,21 +8,16 @@ const { Meta } = Card
 let header = null
 class Home extends Component {
   constructor(props) {
+    console.log(props)
     super(props)
     this.state = {
       arr: []
     }
   }
-  onRef = ref => {
-    // this.child = ref
-    console.log(ref)
-    header = ref
-  }
   childFuntion() {
     header.fnheader()
   }
   componentDidMount() {
-    console.log(this)
     getHomeContent().then(res => {
       this.setState({
         arr: res.data
@@ -32,10 +27,7 @@ class Home extends Component {
   render() {
     return (
       <div className="home">
-        <Header
-          router={this.props.location.pathname}
-          onRef={this.onRef}
-        ></Header>
+        <Header router={this.props.location.pathname}></Header>
         <div className="home-content">
           {' '}
           {this.state.arr.map(function(item, index) {

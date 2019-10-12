@@ -19,33 +19,33 @@ export default class CommentList extends Component {
       <div>
         {' '}
         {this.state.comments.map((c, i) => (
-          <Comment key={i} {...c} />
+          <Comment key={i} {...c} /> //props 必须要展开
         ))}{' '}
       </div>
     )
   }
 }
 
-//展示组件
-// class Comment extends Component {
-//   render() {
-//     console.log('render comments')
-//     return (
-//       <div>
-//         {' '}
-//         <p>{this.props.data.body}</p> <p> --- {this.props.data.author}</p>{' '}
-//       </div>
-//     )
-//   }
-// }
+//PureComponent 必须要用class
+class Comment extends React.PureComponent {
+  render() {
+    console.log('render comments')
+    return (
+      <div>
+        {' '}
+        <p>{this.props.body}</p> <p> --- {this.props.author}</p>{' '}
+      </div>
+    )
+  }
+}
 
-// 高阶组件
-const Comment = React.memo(function(props) {
-  console.log('render comments')
-  return (
-    <div>
-      <p>{props.body}</p>
-      <p> --- {props.author}</p>
-    </div>
-  )
-})
+// memo 用法
+// const Comment = React.memo(function(props) {
+//   console.log('render comments')
+//   return (
+//     <div>
+//       <p>{props.body}</p>
+//       <p> --- {props.author}</p>
+//     </div>
+//   )
+// })
