@@ -47,19 +47,21 @@ class Index extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>MY FIRST REACT APP</p>
-          {buttons.map((item, index) => (
-            <div key={index} className="button-container">
-              {' '}
-              <Button
-                type="primary"
-                onClick={e => {
-                  this.buttonClick(item.path)
-                }}
-              >
-                {item.name}
-              </Button>
-            </div>
-          ))}
+          <div className="button-container-container">
+            {buttons.map((item, index) => (
+              <div key={index} className="button-container">
+                {' '}
+                <Button
+                  type="primary"
+                  onClick={e => {
+                    this.buttonClick(item.path)
+                  }}
+                >
+                  {item.name}
+                </Button>
+              </div>
+            ))}
+          </div>
         </header>
       </div>
     )
