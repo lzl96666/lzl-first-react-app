@@ -1,6 +1,7 @@
 const initial = {
   isLogin: false,
-  loading: false
+  loading: false,
+  error: ''
 }
 
 export const user = (state = initial, action) => {
@@ -8,23 +9,35 @@ export const user = (state = initial, action) => {
     case 'requestLogin':
       return {
         isLogin: false,
-        loading: true
+        loading: true,
+        error: ''
       }
-    case 'login':
+    case 'loginSuccess':
       return {
         isLogin: true,
-        loading: false
+        loading: false,
+        error: ''
+      }
+    case 'loginFailure':
+      return {
+        isLogin: false,
+        loading: false,
+        error: action.message
       }
     default:
       return state
   }
 }
 
-// action creator
-export const login = () => dispatch => {
-  dispatch({ type: 'requestLogin' })
-  setTimeout(() => {
-    // 异步结束后，手动执行dispatch
-    dispatch({ type: 'login' })
-  }, 2000)
+export function login(uname) {
+  return { type: 'login', uname }
 }
+
+// action creator
+// export const login = () => dispatch => {
+//   dispatch({ type: 'requestLogin' })
+//   setTimeout(() => {
+//     // 异步结束后，手动执行dispatch
+//     dispatch({ type: 'login' })
+//   }, 2000)
+// }

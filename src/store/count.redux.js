@@ -16,10 +16,12 @@ export const add = () =>
 export const minus = () =>
   // console.log('minus prop' + prop)
   ({ type: 'minus' })
-export const asyncAdd = () => dispatch => {
-  setTimeout(() => {
-    // 异步结束后，手动执行dispatch
-    dispatch({ type: 'add' })
-    // console.log(dispatch)
-  }, 1000)
-}
+export const asyncAdd = () => ({ type: 'asyncAdd' })
+
+// export const asyncAdd = () => dispatch => {
+//   setTimeout(() => {
+//     // 异步结束后，手动执行dispatch
+//     dispatch({ type: 'add' })
+//     // console.log(dispatch)
+//   }, 1000)
+// }
